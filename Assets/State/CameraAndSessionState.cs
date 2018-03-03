@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.XR.iOS;
 
 /// <summary>
-/// Expose the ARSession and ARConfiguration.
+/// Expose the ARSession and ARConfiguration. Attach this class to a GameObject in Unity, so Unity will
+/// instantiate it.
 /// </summary>
 
-public class CameraManagerWithSession : UnityARCameraManager
+public class CameraAndSessionState : UnityARCameraManager
 {
   public ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
   public UnityARSessionNativeInterface session;

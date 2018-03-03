@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.XR.iOS;
+
+///<summary>
+/// Expose the ARPlaneAnchors that are currently detected by ARKit.
+///</summary>
+
+public sealed class ARAnchorsState : MonoBehaviour
+{
+  public GameObject planePrefab;
+  private UnityARAnchorManager unityARAnchorManager;
+
+  void Start()
+  {
+    unityARAnchorManager = new UnityARAnchorManager();
+    UnityARUtility.InitializePlanePrefab(planePrefab);
+
+    if (GameObject.FindObjectsOfType<ARAnchorsState>().Length > 1)
+    {
+      Debug.LogWarning("There are several game objects with ARAnchors attached. Make sure there's only one.");
+    }
+  }
+
+  void OnDestroy()
+  {
+    unityARAnchorManager.Destroy();
+  }
+
+  public List<ARPlaneAnchorGameObject> GetCurrentPlaneAnchors()
+  {
+    return unityARAnchorManager.GetCurrentPlaneAnchors();
+  }
+}

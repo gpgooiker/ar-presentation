@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Features\Feedback\ARAnchorFeedback.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ConnectionMessageIds.cs" />
@@ -124,7 +125,8 @@
      <Compile Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARUserAnchor.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\UnityARSessionNativeInterface.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\UnityARKitPluginSettings.cs" />
-     <Compile Include="Assets\State\CameraManagerWithSession.cs" />
+     <Compile Include="Assets\State\ARAnchorsState.cs" />
+     <Compile Include="Assets\State\CameraAndSessionState.cs" />
      <None Include="Assets\Packages\UnityARKitPlugin\Examples\Common\Shaders\MobileOcclusion.shader" />
      <None Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
      <None Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShaderLinear.shader" />
