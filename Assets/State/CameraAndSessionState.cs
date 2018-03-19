@@ -10,12 +10,12 @@ using UnityEngine.XR.iOS;
 
 public class CameraAndSessionState : UnityARCameraManager
 {
-  public ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
-  public UnityARSessionNativeInterface session;
+  private ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
+  private UnityARSessionNativeInterface ARSessionInterface;
 
   void Start()
   {
-    session = UnityARSessionNativeInterface.GetARSessionNativeInterface();
+    ARSessionInterface = UnityARSessionNativeInterface.GetARSessionNativeInterface();
 
     Application.targetFrameRate = 60;
     config.planeDetection = planeDetection;
@@ -25,7 +25,7 @@ public class CameraAndSessionState : UnityARCameraManager
 
     if (config.IsSupported)
     {
-      session.RunWithConfig(config);
+      ARSessionInterface.RunWithConfig(config);
     }
 
     if (m_camera == null)
@@ -38,11 +38,15 @@ public class CameraAndSessionState : UnityARCameraManager
   {
     if (m_camera != null)
     {
-      Matrix4x4 matrix = session.GetCameraPose();
+      Matrix4x4 matrix = ARSessionInterface.GetCameraPose();
       m_camera.transform.localPosition = UnityARMatrixOps.GetPosition(matrix);
       m_camera.transform.localRotation = UnityARMatrixOps.GetRotation(matrix);
 
-      m_camera.projectionMatrix = session.GetCameraProjection();
+      m_camera.projectionMatrix = ARSessionInterface.GetCameraProjection();
     }
+  }
+
+  public ARKitWorldTrackingSessionConfiguration GetWorldTrackingConfiguration() {
+    return config;
   }
 }
