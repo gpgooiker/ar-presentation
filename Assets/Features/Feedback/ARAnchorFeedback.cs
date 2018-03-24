@@ -14,6 +14,7 @@ public class ARAnchorFeedback : MonoBehaviour {
   }
 
 	void Update () {
-    feedback.text = "Number of anchors: " + anchors.GetCurrentPlaneAnchors().Count.ToString();
+    feedback.text = "# of Anchors: " + anchors.GetCurrentPlaneAnchors().Count.ToString() +
+    " - Cam: " + Camera.main.transform.position.ToString();
   }
 }
