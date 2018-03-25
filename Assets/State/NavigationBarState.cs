@@ -14,6 +14,7 @@ using UnityEngine.XR.iOS;
 public class NavigationBarState : MonoBehaviour
 {
   public GameObject navigationBar;
+  public float distanceUnderCamera = 0.4f;
 
   void Start()
   {
@@ -30,16 +31,38 @@ public class NavigationBarState : MonoBehaviour
 
   void LateUpdate()
   {
-    Vector3 cameraPosition = Camera.main.transform.position;
-    float justUnderCamera = cameraPosition.y - (float)0.4;
-    Vector3 navBarPosition = new Vector3(cameraPosition.x, justUnderCamera, cameraPosition.z);
+    Debug.Log(!lookingDown());
+    if (!lookingDown())
+    {
+      Transform cameraTransform = Camera.main.transform;
 
-    Vector3 navBarForwardOnHorizontal = Vector3.ProjectOnPlane(navigationBar.transform.forward, Vector3.up);
-    Vector3 cameraForwardOnHorizontal = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
+      navigationBar.transform.SetPositionAndRotation(placeBelow(cameraTransform.position), rotateAroundYAxisTo(cameraTransform.forward));
+    }
+  }
 
-    Quaternion rotateToWhereCameraLooks = new Quaternion();
-    rotateToWhereCameraLooks.SetLookRotation(cameraForwardOnHorizontal, Vector3.up);
+  private bool lookingDown()
+  {
+    Debug.Log(Vector3.Angle(Camera.main.transform.forward, Vector3.down));
+    return Vector3.Angle(Camera.main.transform.forward, Vector3.down) < 20;
+  }
 
-    navigationBar.transform.SetPositionAndRotation(navBarPosition, rotateToWhereCameraLooks);
+  private Vector3 placeBelow(Vector3 position)
+  {
+    return new Vector3
+    (
+      position.x,
+      position.y - distanceUnderCamera,
+      position.z
+    );
+  }
+
+  private Quaternion rotateAroundYAxisTo(Vector3 lookTo)
+  {
+    Vector3 lookToOnHorizontalPlane = Vector3.ProjectOnPlane(lookTo, Vector3.up);
+
+    Quaternion rotateAroundYAxis = new Quaternion();
+    rotateAroundYAxis.SetLookRotation(lookToOnHorizontalPlane, Vector3.up);
+
+    return rotateAroundYAxis;
   }
 }
