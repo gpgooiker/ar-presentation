@@ -4,17 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class ARAnchorFeedback : MonoBehaviour {
+public class ARAnchorFeedback : MonoBehaviour
+{
   private Text feedback;
-  private ARAnchorsState anchors;
+  private ARAnchorsState anchorsState;
 
-  void Start () {
+  void Start()
+  {
     feedback = GetComponent<Text>();
-    anchors = GameObject.FindObjectOfType<ARAnchorsState>();
+    anchorsState = GameObject.FindObjectOfType<ARAnchorsState>();
   }
 
-	void Update () {
-    feedback.text = "# of Anchors: " + anchors.GetCurrentPlaneAnchors().Count.ToString() +
-    " - Cam: " + Camera.main.transform.position.ToString();
+  void Update()
+  {
+    feedback.text = "";
+
+    if (anchorsState.GetCurrentPlaneAnchors() != null)
+    {
+      feedback.text += "Anchors: " + anchorsState.GetCurrentPlaneAnchors().Count.ToString() + " - ";
+    }
+
+    feedback.text += "Cam: " + Camera.main.transform.position.ToString();
   }
 }

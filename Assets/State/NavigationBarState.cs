@@ -15,12 +15,13 @@ public class NavigationBarState : MonoBehaviour
 {
   public GameObject navigationBar;
   public float distanceUnderCamera = 0.4f;
+  public bool isPressed = false;
 
   void Start()
   {
-    if (GameObject.FindObjectsOfType<NavigationBarState>().Length > 1)
+    if (GameObject.FindObjectsOfType(this.GetType()).Length > 1)
     {
-      Debug.LogWarning("There are several game objects with NavigationBarState attached. Make sure there's only one.");
+      Debug.LogWarning("There are several game objects with " + this.GetType() + " attached. Make sure there's only one.");
     }
 
     if (navigationBar == null)
@@ -29,9 +30,8 @@ public class NavigationBarState : MonoBehaviour
     }
   }
 
-  void LateUpdate()
+  void Update()
   {
-    Debug.Log(!lookingDown());
     if (!lookingDown())
     {
       Transform cameraTransform = Camera.main.transform;
@@ -40,9 +40,14 @@ public class NavigationBarState : MonoBehaviour
     }
   }
 
+  public void pressBar()
+  {
+    isPressed = true;
+    StartCoroutine(UnpressBar());
+  }
+
   private bool lookingDown()
   {
-    Debug.Log(Vector3.Angle(Camera.main.transform.forward, Vector3.down));
     return Vector3.Angle(Camera.main.transform.forward, Vector3.down) < 20;
   }
 
@@ -64,5 +69,11 @@ public class NavigationBarState : MonoBehaviour
     rotateAroundYAxis.SetLookRotation(lookToOnHorizontalPlane, Vector3.up);
 
     return rotateAroundYAxis;
+  }
+
+  IEnumerator UnpressBar()
+  {
+    yield return new WaitForSeconds(1);
+    this.isPressed = false;
   }
 }

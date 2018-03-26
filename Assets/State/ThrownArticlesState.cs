@@ -9,9 +9,9 @@ public class ThrownArticlesState : MonoBehaviour
 
   void Start()
   {
-    if (GameObject.FindObjectsOfType<ThrownArticlesState>().Length > 1)
+    if (GameObject.FindObjectsOfType(this.GetType()).Length > 1)
     {
-      Debug.LogWarning("There are several game objects with ThrownArticlesState attached. Make sure there's only one.");
+      Debug.LogWarning("There are several game objects with " + this.GetType() +  " attached. Make sure there's only one.");
     }
   }
 

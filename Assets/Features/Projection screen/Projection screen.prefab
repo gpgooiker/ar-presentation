@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65466349895814186}
   - component: {fileID: 23265579013645554}
   m_Layer: 0
-  m_Name: War room screen
+  m_Name: Projection screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
