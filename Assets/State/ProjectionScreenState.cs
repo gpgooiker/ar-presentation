@@ -37,19 +37,19 @@ public class ProjectionScreenState : MonoBehaviour
           else
           {
             preview.transform.position = projectingHit.point;
-
-            if (Input.touchCount > 0)
-            {
-              GameObject pieceOfInformation = Instantiate(informationPrefab, projectingHit.point, Quaternion.identity);
-              itemsOfInformation.Add(pieceOfInformation);
-              placingInformation = false;
-              preview = null;
-            }
           }
         }
       }
     }
 
+    if (preview != null && Input.anyKey)
+    {
+      GameObject pieceOfInformation = Instantiate(informationPrefab, preview.transform.position, Quaternion.identity);
+      itemsOfInformation.Add(pieceOfInformation);
+      placingInformation = false;
+      Object.Destroy(preview);
+      preview = null;
+    }
   }
 
   public void PlaceInformation()

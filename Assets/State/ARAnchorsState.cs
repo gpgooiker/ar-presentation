@@ -19,7 +19,7 @@ public sealed class ARAnchorsState : MonoBehaviour
 
     if (GameObject.FindObjectsOfType(this.GetType()).Length > 1)
     {
-      Debug.LogWarning("There are several game objects with " + this.GetType() +  " attached. Make sure there's only one.");
+      Debug.LogWarning("There are several game objects with " + this.GetType() + " attached. Make sure there's only one.");
     }
   }
 

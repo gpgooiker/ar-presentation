@@ -48,6 +48,7 @@ public class NavigationBarState : MonoBehaviour
 
   private bool lookingDown()
   {
+    // TODO: place a overlay in a Canvas and just show this overlay when looking down.
     return Vector3.Angle(Camera.main.transform.forward, Vector3.down) < 20;
   }
 
