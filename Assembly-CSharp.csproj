@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Features\Feedback\ARAnchorFeedback.cs" />
-     <Compile Include="Assets\Features\NavigationIn3D\NavigationIn3D.cs" />
+     <Compile Include="Assets\Features\Navigation In Overlay\NavigationInOverlay.cs" />
      <Compile Include="Assets\Features\Throw article\ThrowArticle.cs" />
+     <Compile Include="Assets\Features\Ticket\CreateTicket.cs" />
+     <Compile Include="Assets\Features\Ticket\TicketBehavior.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ConnectionMessageIds.cs" />

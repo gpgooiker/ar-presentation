@@ -1,22 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.iOS;
 
 public class ProjectionScreenState : MonoBehaviour
 {
-  public GameObject informationPrefab;
-  public GameObject informationPreviewPrefab;
+  public GameObject ticketPrefab;
+  public GameObject ticketPreviewPrefab;
   private GameObject preview;
-  private bool placingInformation = false;
-  private List<GameObject> itemsOfInformation = new List<GameObject>();
+  private bool placingInformation;
+  private List<GameObject> tickets = new List<GameObject>();
+  private List<Ticket> ticketsData = new List<Ticket>();
 
   void Start()
   {
+    placingInformation = false;
+
     if (GameObject.FindObjectsOfType(this.GetType()).Length > 1)
     {
       Debug.LogWarning("There are several game objects with " + this.GetType() + " attached. Make sure there's only one.");
     }
+
+    ticketsData.Add(new Ticket("Create markup for login", "Create an Angular component for the page", TicketStatus.Planned));
+    ticketsData.Add(new Ticket("Style login", "Some scss for the login", TicketStatus.Planned));
   }
 
   void Update()
@@ -32,7 +36,7 @@ public class ProjectionScreenState : MonoBehaviour
         {
           if (preview == null)
           {
-            preview = Instantiate(informationPreviewPrefab, projectingHit.point, Quaternion.identity);
+            preview = Instantiate(ticketPreviewPrefab, projectingHit.point, Quaternion.identity);
           }
           else
           {
@@ -44,8 +48,10 @@ public class ProjectionScreenState : MonoBehaviour
 
     if (preview != null && Input.anyKey)
     {
-      GameObject pieceOfInformation = Instantiate(informationPrefab, preview.transform.position, Quaternion.identity);
-      itemsOfInformation.Add(pieceOfInformation);
+      GameObject newTicket = Instantiate(ticketPrefab, preview.transform.position, Quaternion.identity);
+      TicketBehavior newTicketBehavior = newTicket.GetComponent<TicketBehavior>();
+      newTicketBehavior.SetTitle(ticketsData[0].title);
+      tickets.Add(newTicket);
       placingInformation = false;
       Object.Destroy(preview);
       preview = null;
