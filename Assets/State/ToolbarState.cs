@@ -2,16 +2,16 @@
 using UnityEngine;
 
 /// <summary>
-/// A navigation bar is a collection of buttons that is easily discovered by the user. Wherever the user
-/// moves to, the navigation bar will be visible if the user looks to the floor.
+/// A toolbar is a collection of buttons that is easily discovered by the user. Wherever the user
+/// moves to, the toolbar will be visible if the user looks to the floor.
 /// </summary>
 
-public class NavigationBarState : MonoBehaviour
+public class ToolbarState : MonoBehaviour
 {
-  public GameObject navigationInOverlay;
+  public GameObject toolbar;
   public bool isPressed;
 
-  private RectTransform navigationTransform;
+  private RectTransform barTransform;
 
   void Start()
   {
@@ -22,27 +22,27 @@ public class NavigationBarState : MonoBehaviour
       Debug.LogWarning("There are several game objects with " + this.GetType() + " attached. Make sure there's only one.");
     }
 
-    if (navigationInOverlay == null)
+    if (toolbar == null)
     {
-      Debug.LogWarning("Attach a 'navigation bar' UI element to NavigationBarState");
+      Debug.LogWarning("Attach a 'Toolbar' UI element to ToolbarState");
     }
 
-    navigationTransform = navigationInOverlay.GetComponent<RectTransform>();
+    barTransform = toolbar.GetComponent<RectTransform>();
   }
 
   void Update()
   {
-    Vector3 position = new Vector3(navigationTransform.position.x, navigationTransform.position.y, navigationTransform.position.z);
+    Vector3 position = new Vector3(barTransform.position.x, barTransform.position.y, barTransform.position.z);
 
     if (lookingDown())
     {
       Vector3 show = new Vector3(position.x, 90f, position.z);
-      navigationTransform.position = show;
+      barTransform.position = show;
     }
     else
     {
       Vector3 hide = new Vector3(position.x, -90f, position.z);
-      navigationTransform.position = hide;
+      barTransform.position = hide;
     }
   }
 

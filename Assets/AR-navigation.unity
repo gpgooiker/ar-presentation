@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e240c9aaba0472eae07b46c1bad41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigationInOverlay: {fileID: 1810930344}
+  toolbar: {fileID: 1810930344}
   isPressed: 0
 --- !u!114 &1798837771
 MonoBehaviour:
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 1810930347}
   - component: {fileID: 1810930346}
   m_Layer: 5
-  m_Name: NavigationInOverlay
+  m_Name: Toolbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class NavigationInOverlay : MonoBehaviour
+public class Toolbar : MonoBehaviour
 {
-  private NavigationBarState navigationBarState;
+  private ToolbarState toolbarState;
   private ProjectionScreenState projectionScreenState;
   private Button addButton;
   private Text buttonText;
@@ -15,7 +15,7 @@ public class NavigationInOverlay : MonoBehaviour
 
   void Start()
   {
-    navigationBarState = GameObject.FindObjectOfType<NavigationBarState>();
+    toolbarState = GameObject.FindObjectOfType<ToolbarState>();
     projectionScreenState = GameObject.FindObjectOfType<ProjectionScreenState>();
     addButton = gameObject.GetComponent<Button>();
     buttonText = addButton.GetComponentInChildren<Text>();
@@ -25,7 +25,7 @@ public class NavigationInOverlay : MonoBehaviour
 
   void Update()
   {
-    if (navigationBarState != null && navigationBarState.isPressed)
+    if (toolbarState != null && toolbarState.isPressed)
     {
       buttonText.text = "Placing a ticket";
     }
@@ -47,11 +47,13 @@ public class NavigationInOverlay : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-          navigationBarState.pressBar();
-          projectionScreenState.PlaceInformation();
+          if (result.gameObject.name == "Toolbar")
+          {
+            toolbarState.pressBar();
+            projectionScreenState.PlaceInformation();
+          }
         }
       }
     }
   }
 }
-

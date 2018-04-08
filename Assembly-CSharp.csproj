@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Features\Feedback\ARAnchorFeedback.cs" />
-     <Compile Include="Assets\Features\Navigation In Overlay\NavigationInOverlay.cs" />
      <Compile Include="Assets\Features\Ticket\CreateTicket.cs" />
      <Compile Include="Assets\Features\Ticket\TicketBehavior.cs" />
+     <Compile Include="Assets\Features\Toolbar\Toolbar.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ConnectionMessageIds.cs" />
@@ -130,8 +130,8 @@
      <Compile Include="Assets\Packages\UnityARKitPlugin\UnityARKitPluginSettings.cs" />
      <Compile Include="Assets\State\ARAnchorsState.cs" />
      <Compile Include="Assets\State\CameraAndSessionState.cs" />
-     <Compile Include="Assets\State\NavigationBarState.cs" />
      <Compile Include="Assets\State\ProjectionScreenState.cs" />
+     <Compile Include="Assets\State\ToolbarState.cs" />
      <None Include="Assets\Packages\UnityARKitPlugin\Examples\Common\Shaders\MobileOcclusion.shader" />
      <None Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
      <None Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShaderLinear.shader" />
