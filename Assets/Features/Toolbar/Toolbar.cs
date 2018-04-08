@@ -17,7 +17,7 @@ public class Toolbar : MonoBehaviour
   {
     toolbarState = GameObject.FindObjectOfType<ToolbarState>();
     projectionScreenState = GameObject.FindObjectOfType<ProjectionScreenState>();
-    addButton = gameObject.GetComponent<Button>();
+    addButton = gameObject.GetComponentInChildren<Button>();
     buttonText = addButton.GetComponentInChildren<Text>();
     canvasRaycaster = gameObject.GetComponentInParent<GraphicRaycaster>();
     events = gameObject.GetComponentInParent<EventSystem>();
@@ -47,7 +47,7 @@ public class Toolbar : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-          if (result.gameObject.name == "Toolbar")
+          if (result.gameObject.name == "PlaceTicketButton")
           {
             toolbarState.pressBar();
             projectionScreenState.PlaceInformation();

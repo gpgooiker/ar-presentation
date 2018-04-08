@@ -36,12 +36,12 @@ public class ToolbarState : MonoBehaviour
 
     if (lookingDown())
     {
-      Vector3 show = new Vector3(position.x, 90f, position.z);
+      Vector3 show = new Vector3(position.x, 40f, position.z);
       barTransform.position = show;
     }
     else
     {
-      Vector3 hide = new Vector3(position.x, -90f, position.z);
+      Vector3 hide = new Vector3(position.x, -25f, position.z);
       barTransform.position = hide;
     }
   }
