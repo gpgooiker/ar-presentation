@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\Features\Feedback\ARAnchorFeedback.cs" />
      <Compile Include="Assets\Features\Navigation In Overlay\NavigationInOverlay.cs" />
-     <Compile Include="Assets\Features\Throw article\ThrowArticle.cs" />
      <Compile Include="Assets\Features\Ticket\CreateTicket.cs" />
      <Compile Include="Assets\Features\Ticket\TicketBehavior.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
@@ -133,7 +132,6 @@
      <Compile Include="Assets\State\CameraAndSessionState.cs" />
      <Compile Include="Assets\State\NavigationBarState.cs" />
      <Compile Include="Assets\State\ProjectionScreenState.cs" />
-     <Compile Include="Assets\State\ThrownArticlesState.cs" />
      <None Include="Assets\Packages\UnityARKitPlugin\Examples\Common\Shaders\MobileOcclusion.shader" />
      <None Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
      <None Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShaderLinear.shader" />
