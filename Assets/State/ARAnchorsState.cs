@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
-using Collections.Hybrid.Generic;
 
 ///<summary>
 /// Expose the ARPlaneAnchors that are currently detected by ARKit.
