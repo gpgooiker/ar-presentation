@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Features\Feedback\ARAnchorFeedback.cs" />
      <Compile Include="Assets\Features\Ticket\CreateTicket.cs" />
+     <Compile Include="Assets\Features\Ticket\TestData.cs" />
      <Compile Include="Assets\Features\Ticket\TicketBehavior.cs" />
      <Compile Include="Assets\Features\Toolbar\Toolbar.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />

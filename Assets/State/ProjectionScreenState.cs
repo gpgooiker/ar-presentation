@@ -8,7 +8,6 @@ public class ProjectionScreenState : MonoBehaviour
   private GameObject preview;
   private bool placingInformation;
   private List<GameObject> tickets = new List<GameObject>();
-  private List<Ticket> ticketsData = new List<Ticket>();
 
   void Start()
   {
@@ -18,9 +17,6 @@ public class ProjectionScreenState : MonoBehaviour
     {
       Debug.LogWarning("There are several game objects with " + this.GetType() + " attached. Make sure there's only one.");
     }
-
-    ticketsData.Add(new Ticket("Create markup for login", "Create an Angular component for the page", TicketStatus.Planned));
-    ticketsData.Add(new Ticket("Style login", "Some scss for the login", TicketStatus.Planned));
   }
 
   void Update()
@@ -50,7 +46,7 @@ public class ProjectionScreenState : MonoBehaviour
     {
       GameObject newTicket = Instantiate(ticketPrefab, preview.transform.position, Quaternion.identity);
       TicketBehavior newTicketBehavior = newTicket.GetComponent<TicketBehavior>();
-      newTicketBehavior.SetTitle(ticketsData[0].title);
+      newTicketBehavior.SetTicketContent(tickets.Count);
       tickets.Add(newTicket);
       placingInformation = false;
       Object.Destroy(preview);
