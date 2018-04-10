@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Packages\UnityARKitPlugin\Examples\UnityParticlePainter\HSVPicker\Editor\BoxSliderEditor.cs" />
+     <Compile Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\Editor\ARResourcesJSON.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\Plugins\iOS\UnityARKit\Editor\UnityARBuildPostprocessor.cs" />
      <None Include="Assets\Packages\UnityARKitPlugin\Examples\Common\Shaders\MobileOcclusion.shader" />
      <None Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />

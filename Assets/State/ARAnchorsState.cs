@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
+using Collections.Hybrid.Generic;
 
 ///<summary>
 /// Expose the ARPlaneAnchors that are currently detected by ARKit.
@@ -28,7 +29,7 @@ public sealed class ARAnchorsState : MonoBehaviour
     unityARAnchorManager.Destroy();
   }
 
-  public List<ARPlaneAnchorGameObject> GetCurrentPlaneAnchors()
+  public ICollection<ARPlaneAnchorGameObject> GetCurrentPlaneAnchors()
   {
     return unityARAnchorManager.GetCurrentPlaneAnchors();
   }

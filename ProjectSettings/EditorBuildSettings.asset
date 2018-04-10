@@ -38,9 +38,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Packages/UnityARKitPlugin/Examples/FaceTracking/FaceDirectionalLightEstimate.unity
     guid: 360fd35caee4f4e069485021a27c0b06
-  - enabled: 0
-    path: Assets/AR-metaphors.unity
-    guid: f61febb86c1834f7796e3553f5e44533
   - enabled: 1
     path: Assets/AR-navigation.unity
     guid: d4480e6f7ab1946558bd86aee6bbc139
