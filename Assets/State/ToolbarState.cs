@@ -59,7 +59,6 @@ public class ToolbarState : MonoBehaviour
 
   public bool StartingToLookDown()
   {
-    Debug.Log(angleToDownDirection);
     return angleToDownDirection < 50f && angleToDownDirection > 20f;
   }
 
