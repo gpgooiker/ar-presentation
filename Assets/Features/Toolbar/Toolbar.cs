@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Toolbar : MonoBehaviour
 {
+  public GameObject toolbarHint;
+
   private ToolbarState toolbarState;
   private ProjectionScreenState projectionScreenState;
   private Button addButton;
@@ -12,26 +14,33 @@ public class Toolbar : MonoBehaviour
   private GraphicRaycaster canvasRaycaster;
   private PointerEventData pointer;
   private EventSystem events;
+  private Color interactionColor;
+  private Color activeColor;
 
   void Start()
   {
     toolbarState = GameObject.FindObjectOfType<ToolbarState>();
     projectionScreenState = GameObject.FindObjectOfType<ProjectionScreenState>();
+
     addButton = gameObject.GetComponentInChildren<Button>();
     buttonText = addButton.GetComponentInChildren<Text>();
     canvasRaycaster = gameObject.GetComponentInParent<GraphicRaycaster>();
     events = gameObject.GetComponentInParent<EventSystem>();
+
+    interactionColor = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b);
+    activeColor = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, 0.6f);
+    buttonText.text = "New To-do";
   }
 
   void Update()
   {
-    if (toolbarState != null && toolbarState.isPressed)
+    if (toolbarState.isPressed)
     {
-      buttonText.text = "Placing a ticket";
+      buttonText.color = activeColor;
     }
     else
     {
-      buttonText.text = "Place a ticket";
+      buttonText.color = interactionColor;
     }
 
     if (canvasRaycaster != null && events != null && Input.touchCount > 0)
@@ -49,11 +58,16 @@ public class Toolbar : MonoBehaviour
         {
           if (result.gameObject.name == "PlaceTicketButton")
           {
-            toolbarState.pressBar();
+            toolbarState.pressButton();
             projectionScreenState.PlaceInformation();
           }
         }
       }
+    }
+
+    if (toolbarHint != null)
+    {
+      toolbarHint.SetActive(toolbarState.StartingToLookDown());
     }
   }
 }

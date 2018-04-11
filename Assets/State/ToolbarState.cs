@@ -12,6 +12,9 @@ public class ToolbarState : MonoBehaviour
   public bool isPressed;
 
   private RectTransform barTransform;
+  private float toolbarHeight = 100;
+  private float toolbarPadding = 25f;
+  private float angleToDownDirection = 0f;
 
   void Start()
   {
@@ -28,39 +31,46 @@ public class ToolbarState : MonoBehaviour
     }
 
     barTransform = toolbar.GetComponent<RectTransform>();
+    toolbarHeight = barTransform.sizeDelta.y;
   }
 
   void Update()
   {
     Vector3 position = new Vector3(barTransform.position.x, barTransform.position.y, barTransform.position.z);
+    angleToDownDirection = Vector3.Angle(Camera.main.transform.forward, Vector3.down);
 
     if (lookingDown())
     {
-      Vector3 show = new Vector3(position.x, 40f, position.z);
+      Vector3 show = new Vector3(position.x, toolbarHeight / 2, position.z);
       barTransform.position = show;
     }
     else
     {
-      Vector3 hide = new Vector3(position.x, -25f, position.z);
+      Vector3 hide = new Vector3(position.x, -1 * toolbarPadding, position.z);
       barTransform.position = hide;
     }
   }
 
-  public void pressBar()
+  public void pressButton()
   {
     isPressed = true;
     StartCoroutine(UnpressBar());
   }
 
-  private bool lookingDown()
+  public bool StartingToLookDown()
   {
-    return Vector3.Angle(Camera.main.transform.forward, Vector3.down) < 20;
+    Debug.Log(angleToDownDirection);
+    return angleToDownDirection < 50f && angleToDownDirection > 20f;
   }
 
+  public bool lookingDown()
+  {
+    return angleToDownDirection < 20f;
+  }
 
   IEnumerator UnpressBar()
   {
-    yield return new WaitForSeconds(1);
+    yield return new WaitForSeconds(2);
     this.isPressed = false;
   }
 }

@@ -8,13 +8,13 @@ public class TestData : MonoBehaviour
   void Awake()
   {
     ticketsData.Add(new Ticket(
-      "CREATE TODOs",
-      "Post a TODO to the back-\nend",
+      "GET TODOs",
+      "Fetch the current TODOs \nfrom the back-end",
       TicketStatus.Planned
     ));
     ticketsData.Add(new Ticket(
-      "GET TODOs",
-      "Fetch the current TODOs \nfrom the back-end",
+      "POST TODOs",
+      "Post a TODO to the back-\nend",
       TicketStatus.Planned
     ));
     ticketsData.Add(new Ticket(
