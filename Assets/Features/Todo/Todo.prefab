@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 65880073021953592}
   - component: {fileID: 23609382429188860}
   - component: {fileID: 114599610014866312}
-  - component: {fileID: 114079233443857042}
+  - component: {fileID: 114759467140433536}
   m_Layer: 10
-  m_Name: Ticket
+  m_Name: Todo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278716424
---- !u!114 &114079233443857042
+--- !u!114 &114599610014866312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195714667494616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8567cd14e0485492a8a37ba8e145e814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114759467140433536
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -333,17 +344,6 @@ MonoBehaviour:
   TitleGameObject: {fileID: 1841342326989746}
   BodyGameObject: {fileID: 1319688671618152}
   StatusGameObject: {fileID: 1262095819706260}
---- !u!114 &114599610014866312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195714667494616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8567cd14e0485492a8a37ba8e145e814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222493867149362810
 CanvasRenderer:
   m_ObjectHideFlags: 1

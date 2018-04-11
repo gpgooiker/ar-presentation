@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
-public enum TicketStatus
+public enum TodoStatus
 {
   Planned, Doing, Reviewing, Done
 }
 
-public struct Ticket
+public struct Todo
 {
   public string title, body;
-  public TicketStatus status;
+  public TodoStatus status;
 
-  public Ticket(string t, string b, TicketStatus s)
+  public Todo(string t, string b, TodoStatus s)
   {
     title = t;
     body = b;
@@ -18,7 +18,7 @@ public struct Ticket
   }
 }
 
-public class CreateTicket : MonoBehaviour
+public class CreateTodo : MonoBehaviour
 {
 
   // Use this for initialization

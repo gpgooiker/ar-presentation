@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 
 [RequireComponent(typeof(TestData))]
-public class TicketBehavior : MonoBehaviour
+public class TodoBehavior : MonoBehaviour
 {
   public GameObject TitleGameObject;
   public GameObject BodyGameObject;
@@ -17,10 +17,10 @@ public class TicketBehavior : MonoBehaviour
   {
     testData = GetComponent<TestData>();
 
-    if (testData.ticketsData.Count > 0)
+    if (testData.todos.Count > 0)
     {
-      int timesLarger = (int)Mathf.Floor(index / testData.ticketsData.Count);
-      int clampedIndex = index - timesLarger * testData.ticketsData.Count;
+      int timesLarger = (int)Mathf.Floor(index / testData.todos.Count);
+      int clampedIndex = index - timesLarger * testData.todos.Count;
 
       if (TitleGameObject != null)
       {
@@ -37,9 +37,9 @@ public class TicketBehavior : MonoBehaviour
         statusTextMesh = StatusGameObject.GetComponent<TextMesh>();
       }
 
-      titleTextMesh.text = testData.ticketsData[clampedIndex].title;
-      bodyTextMesh.text = testData.ticketsData[clampedIndex].body;
-      statusTextMesh.text = testData.ticketsData[clampedIndex].status.ToString();
+      titleTextMesh.text = testData.todos[clampedIndex].title;
+      bodyTextMesh.text = testData.todos[clampedIndex].body;
+      statusTextMesh.text = testData.todos[clampedIndex].status.ToString();
     }
   }
 }

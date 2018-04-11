@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Features\Feedback\ARAnchorFeedback.cs" />
-     <Compile Include="Assets\Features\Ticket\CreateTicket.cs" />
-     <Compile Include="Assets\Features\Ticket\TestData.cs" />
-     <Compile Include="Assets\Features\Ticket\TicketBehavior.cs" />
+     <Compile Include="Assets\Features\Todo\CreateTodo.cs" />
+     <Compile Include="Assets\Features\Todo\TestData.cs" />
+     <Compile Include="Assets\Features\Todo\TodoBehavior.cs" />
      <Compile Include="Assets\Features\Toolbar\Toolbar.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
      <Compile Include="Assets\Packages\UnityARKitPlugin\ARKitRemote\ARKitRemoteConnection.cs" />

@@ -3,44 +3,44 @@ using UnityEngine;
 
 public class TestData : MonoBehaviour
 {
-  public List<Ticket> ticketsData = new List<Ticket>();
+  public List<Todo> todos = new List<Todo>();
 
   void Awake()
   {
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "GET TODOs",
       "Fetch the current TODOs \nfrom the back-end",
-      TicketStatus.Planned
+      TodoStatus.Planned
     ));
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "POST TODOs",
       "Post a TODO to the back-\nend",
-      TicketStatus.Planned
+      TodoStatus.Planned
     ));
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "Create markup for login",
       "Create a component for the \npage and add a view",
-      TicketStatus.Doing
+      TodoStatus.Doing
     ));
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "Create a TODO component",
       "Add a component, a view \nand bindings",
-      TicketStatus.Doing
+      TodoStatus.Doing
     ));
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "Style login",
       "Some scss for the login",
-      TicketStatus.Done
+      TodoStatus.Done
     ));
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "NodeJS server",
       "Get the REST endpoint up \n and running",
-      TicketStatus.Done
+      TodoStatus.Done
     ));
-    ticketsData.Add(new Ticket(
+    todos.Add(new Todo(
       "Document REST endpoint",
       "Make sure those front-\nenders can do their \njobs",
-      TicketStatus.Done
+      TodoStatus.Done
     ));
   }
 }

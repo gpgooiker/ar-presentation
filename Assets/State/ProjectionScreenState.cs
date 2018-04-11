@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ProjectionScreenState : MonoBehaviour
 {
-  public GameObject ticketPrefab;
-  public GameObject ticketPreviewPrefab;
+  public GameObject todoPrefab;
+  public GameObject todoPreviewPrefab;
   private GameObject preview;
   private bool placingInformation;
   private List<GameObject> tickets = new List<GameObject>();
@@ -32,7 +32,7 @@ public class ProjectionScreenState : MonoBehaviour
         {
           if (preview == null)
           {
-            preview = Instantiate(ticketPreviewPrefab, projectingHit.point, Quaternion.identity);
+            preview = Instantiate(todoPreviewPrefab, projectingHit.point, Quaternion.identity);
           }
           else
           {
@@ -44,9 +44,9 @@ public class ProjectionScreenState : MonoBehaviour
 
     if (preview != null && Input.anyKey)
     {
-      GameObject newTicket = Instantiate(ticketPrefab, preview.transform.position, Quaternion.identity);
-      TicketBehavior newTicketBehavior = newTicket.GetComponent<TicketBehavior>();
-      newTicketBehavior.SetTicketContent(tickets.Count);
+      GameObject newTicket = Instantiate(todoPrefab, preview.transform.position, Quaternion.identity);
+      TodoBehavior newTodoBehavior = newTicket.GetComponent<TodoBehavior>();
+      newTodoBehavior.SetTicketContent(tickets.Count);
       tickets.Add(newTicket);
       placingInformation = false;
       Object.Destroy(preview);

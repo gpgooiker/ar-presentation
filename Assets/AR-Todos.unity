@@ -833,8 +833,8 @@ GameObject:
   - component: {fileID: 1798837768}
   - component: {fileID: 1798837771}
   - component: {fileID: 1798837770}
-  - component: {fileID: 1798837769}
   - component: {fileID: 1798837772}
+  - component: {fileID: 1798837769}
   m_Layer: 0
   m_Name: State
   m_TagString: Untagged
@@ -866,9 +866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873958fe19b8146aab9c079a83b1bba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ticketPrefab: {fileID: 1195714667494616, guid: 7923eae54525e4d0c98b8c0aad30c787,
-    type: 2}
-  ticketPreviewPrefab: {fileID: 1892072713719626, guid: 68a13f08ea86647f29eddba232be3900,
+  todoPrefab: {fileID: 1195714667494616, guid: 7923eae54525e4d0c98b8c0aad30c787, type: 2}
+  todoPreviewPrefab: {fileID: 1892072713719626, guid: 68a13f08ea86647f29eddba232be3900,
     type: 2}
 --- !u!114 &1798837770
 MonoBehaviour:
