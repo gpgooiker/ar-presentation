@@ -59,12 +59,12 @@ public class ToolbarState : MonoBehaviour
 
   public bool StartingToLookDown()
   {
-    return angleToDownDirection < 50f && angleToDownDirection > 20f;
+    return angleToDownDirection < 70f && angleToDownDirection > 40f;
   }
 
   public bool lookingDown()
   {
-    return angleToDownDirection < 20f;
+    return angleToDownDirection < 40f;
   }
 
   IEnumerator UnpressBar()

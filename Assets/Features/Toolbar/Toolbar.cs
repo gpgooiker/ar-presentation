@@ -29,7 +29,7 @@ public class Toolbar : MonoBehaviour
 
     interactionColor = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b);
     activeColor = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, 0.6f);
-    buttonText.text = "New To-do";
+    buttonText.text = "New Todo";
   }
 
   void Update()
@@ -56,7 +56,7 @@ public class Toolbar : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-          if (result.gameObject.name == "PlaceTicketButton")
+          if (result.gameObject.name == "PlaceTodoButton")
           {
             toolbarState.pressButton();
             projectionScreenState.PlaceInformation();
